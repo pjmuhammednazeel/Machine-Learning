@@ -2,7 +2,9 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
+from sklearn.metrics import r2_score, mean_squared_error,mean_absolute_error
+
+
 
 df=pd.read_csv("/home/nazeel/PycharmProjects/PythonProject/Housing.csv")
 
@@ -28,3 +30,5 @@ predict_test=model.predict(x_test)
 
 print("R2 Score of Train set",r2_score(y_train,predict_train))
 print("R2 Score of Test set",r2_score(y_test,predict_test))
+print("Mean Squared error",mean_squared_error(predict_test,y_test))
+print("Mean Squared error",mean_absolute_error(predict_test,y_test))
